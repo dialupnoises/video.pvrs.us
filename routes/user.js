@@ -24,6 +24,11 @@ exports.initialize = function(_Site)
 		}
 	);
 
+	app.get('/logout', function(req, res) {
+		req.logout();
+		res.redirect('/');
+	});
+
 	passport.use('google_teacher', new GoogleStrategy({
 			returnURL: 'http://' + Site.Domain + '/login/teacher/callback',
 			realm: 'http://' + Site.Domain + '/',

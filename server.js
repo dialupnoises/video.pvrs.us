@@ -8,7 +8,7 @@ var express = require('express'),
 var Site = {};
 var PORT = process.env.PORT || 3001;
 
-Site.Domain = process.env.NODE_ENV == 'production' ? 'video.pvrs.us' : 'localhost:' + PORT;
+Site.Domain = process.env.NODE_ENV == 'production' ? 'video.pvrs.us' : 'localhost:3001';
 
 var app = express();
 

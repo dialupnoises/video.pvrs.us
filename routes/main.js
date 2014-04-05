@@ -15,7 +15,7 @@ exports.initialize = function(_Site)
 
 	app.get('/', function(req, res) {
 		if(req.user) return res.redirect('/search');
-		res.render('index');
+		res.render('index',{not_logged_in:true});
 	});
 
 	app.get('/search', function(req, res) {
