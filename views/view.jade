@@ -1,0 +1,18 @@
+extends layout
+block includes
+	script.
+		$(document).ready(function() {
+			$('#video').attr('width', $('.container').width() - 30);
+			$('#video').attr('height', 350/640 * $('.container').width() - 30);
+			videojs('video', {
+				techOrder: ['flash', 'html5']
+			});
+		});
+block body
+	div
+		h4#video_title= video.title
+		|  by 
+		a(href='/user/' + video.author.username)= video.author.name
+	div.video
+		video.video-js.vjs-default-skin.vjs-big-play-centered#video(controls,preload='auto',width='640',height='350',poster=video.thumb)
+			source(src='/stream/' + video.id, type='video/mp4')

@@ -1,0 +1,23 @@
+extends layout
+block body
+	if author
+		h4#search_results= 'Videos from ' + author
+	else
+		h4#search_results= 'Search results for "' + query + '"'
+	each entry in entries
+		div.row.search_video_row
+			a(href='/view/'+entry.id) 
+				img.search_video_thumb(src=entry.thumb)		
+			div.search_video_info
+				p
+					a.search_video_title(href='/view/'+entry.id)= entry.title
+				p
+					| by 
+					a.search_video_author(href='/user/' + entry.author.username)= entry.author.name
+				p
+					span.search_video_uploaded= 'Uploaded ' + entry.uploaded
+					span.search_video_views= ' - ' + entry.views + ' views'
+	div.row.search_video_page_row
+		if !first_page
+			a.last_page.btn.btn-default(href=(author?'?':'?q='+query+'&')+'page='+(page-1)) Previous Page
+		a.next_page.btn.btn-default(href=(author?'?':'?q='+query+'&')+'page='+(page+1)) Next Page

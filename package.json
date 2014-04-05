@@ -1,0 +1,22 @@
+{
+  "name": "pvrsvideo",
+  "version": "0.1.0",
+  "private": true,
+  "main": "./server",
+  "dependencies": {
+    "colors": "*",
+    "express": "3.4.x",
+    "jade": "~1.0.2",
+    "nib": "~1.0.2",
+    "stylus": "~0.42.3",
+    "passport": "~0.2.0",
+    "passport-google": "~0.3.0",
+    "ytdl": "~0.2.3",
+    "request": "~2.34.0",
+    "dateformat": "~1.0.7-1.2.3",
+    "streamify": "~0.2.3"
+  },
+  "engines": {
+    "node": ">= 0.10.4"
+  }
+}

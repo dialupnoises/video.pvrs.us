@@ -1,0 +1,25 @@
+doctype html
+html(lang='en')
+	head
+		title pvrs video
+		script(src='//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js')
+		script(src='/js/video.js')
+		script.
+			videojs.options.flash.swf = "/video-js.swf";
+		link(href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700', rel='stylesheet')
+		link(href='/css/bootstrap.min.css', rel='stylesheet')
+		link(href='/css/video-js.min.css', rel='stylesheet')
+		link(href='/css/common.css', rel='stylesheet')
+		block includes
+	body
+		if !no_navbar
+			nav.navbar.navbar-inverse.navbar-static-top
+				div.container
+					div.navbar-header
+						a(href='/').navbar-brand pvrs video
+					div.navbar-collapse.navbar-collapse
+						ul.nav.navbar-nav
+							li.active
+								a(href='/') Home
+		div.container
+			block body

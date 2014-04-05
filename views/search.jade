@@ -1,0 +1,11 @@
+extends layout
+block body
+	h1#title pvrs video
+	p.info.
+		Enter a <b>search term</b> or a <b>YouTube URL</b>.
+	div.col-lg-6.col-lg-offset-3
+		form(method='get')
+			div.input-group
+				input.form-control(name='q',placeholder='e.g. fermat\'s last theorem')
+				span.input-group-btn
+					input.btn.btn-info(type='submit',value='Search')
