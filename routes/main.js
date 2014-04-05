@@ -19,7 +19,7 @@ exports.initialize = function(_Site)
 	});
 
 	app.get('/search', function(req, res) {
-		//if(!req.user) return res.redirect('/');
+		if(!req.user) return res.redirect('/');
 		var query = req.query.q;
 		if(!query || /^\s+$/.test(query))
 			return res.render('search');
@@ -29,7 +29,7 @@ exports.initialize = function(_Site)
 	});
 
 	app.get('/user/:user', function(req, res) {
-		//if(!req.user) return res.redirect('/');
+		if(!req.user) return res.redirect('/');
 		var user = req.params.user;
 		if(!user || /^\s+$/.test(user))
 			return res.render('search');
@@ -37,6 +37,7 @@ exports.initialize = function(_Site)
 	});
 	
 	app.get('/view/:id', function(req, res) {
+		if(!req.user) return res.redirect('/');
 		var id = req.params.id;
 		if(!id) return res.status(404).render('not_found');
 		request('https://gdata.youtube.com/feeds/api/videos/'+id+'?v2&prettyprint=true&alt=json', function(err, response, body) {
@@ -70,6 +71,7 @@ exports.initialize = function(_Site)
 	});
 
 	app.get('/stream/:id', function(req, res) {
+		if(!req.user) return res.redirect('/');
 		var id = req.params.id;
 		if(!id) return res.status(404);
 		res.type('video/mp4');
