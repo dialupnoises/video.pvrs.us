@@ -148,7 +148,7 @@ function search(query, req, res, author)
 				title: v.title['$t'],
 				uploaded: dateformat(new Date(v.published['$t']), 'mm/dd/yy hh:MM TT'),
 				views: parseInt(v['yt$statistics'].viewCount).toMoney(),
-				thumb: 'http://img.youtube.com/vi/'+id+'/hqdefault.jpg',
+				thumb: 'http://' + Site.Domain + '/thumb/' + id,
 				id: id
 			});
 		});
