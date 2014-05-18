@@ -8,6 +8,7 @@ Uses Node.js, supports HTML5 streaming and (theoretically) a Flash backup.
 There shouldn't be any setup required other than an `npm install`.
 
 ### License
+```
 The MIT License (MIT)
 
 Copyright (c) 2014 Andrew Rogers
@@ -29,4 +30,5 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
+```
 
